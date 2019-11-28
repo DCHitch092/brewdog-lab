@@ -4,11 +4,14 @@
   <header>
     <section id="header-left">
     <img src='/abv-logo.svg'>
-    <button type="button" v-on:click="favoriteFilter = !favoriteFilter">{{ favoriteFilter ? "Show All" : "Show Favorites" }}</button>
+    <button id="favourite-switch" type="button" v-on:click="favoriteFilter = !favoriteFilter"><h1>{{ favoriteFilter ? "Show All" : "Show Favorites" }}</h1></button>
   </section>
       <beer-label :beer='selectedBeer'></beer-label>
   </header>
-  <beers-list :beers='beers' :favoriteFilter='favoriteFilter'></beers-list>
+  <main>
+    <beers-list :beers='beers' :favoriteFilter='favoriteFilter'></beers-list>
+  </main>
+
 </div>
 
 
@@ -56,7 +59,7 @@ header {
   grid-template-columns: 2fr 5fr;
 }
 header img {
-  max-width: 10em;
+  max-width: 80%;
 }
 #header-left {
   display: flex;
@@ -67,5 +70,10 @@ header img {
 
 #beer-label {
 
+}
+
+#favourite-switch{
+  background-color: #339999;
+  margin: 2em;
 }
 </style>
